@@ -69,3 +69,35 @@ def merge_sort(array):  # merge_sort function creation
 
 
 print("sorted_list:", merge_sort(num_list))  # printing output result as 'sorted_list'
+
+# creating empty lists for even and odd numbers
+oddnum = []
+evennum = []
+
+# for each number in sorted list check if remainder of the division into 2 equals zero or not (it means that number even or add)
+for i in num_list:
+    # if remainder is 0...
+    if i % 2 == 0:
+        # then number is even and we add it to the list of even numbers
+        evennum.append(i)
+    # if reminder is not 0, then it is odd, and we add it to the list of odd numbers
+    else: oddnum.append(i)
+
+# print two lists of even and odd numbers
+print("Even nums list:\n", evennum)
+print("Odd nums list:\n", oddnum)
+
+# counting average
+# creating function which counts average for elements in list in parameter
+def avg_count(any_list):
+    # variable for sum of elements of list
+    sum = 0
+    # for each element of list we add this element to variable
+    for i in any_list:
+        sum = sum + i
+    # then count average by dividing this sum to length of list and returning this value from function
+    return sum / len(any_list)
+
+# calling function of calculating average for lists with even and odd numbers separately and print average to console
+print("Average for even nums:", avg_count(evennum))
+print("Average for odd nums:", avg_count(oddnum))
